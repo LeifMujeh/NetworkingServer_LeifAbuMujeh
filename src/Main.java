@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.ServerSocket;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -11,7 +8,7 @@ public class Main {
         ServerSocket server = null;
         Socket client;
 
-        // Defoult port number we are giung to use
+        // Defult port number we are giung to use
         int portNumber  = 4500;
         if (args.length >= 1) {
             portNumber = Integer.parseInt(args[0]);
@@ -41,8 +38,24 @@ public class Main {
                 InputStream clientIn = client.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(clientIn));
                 String msgFromClient = br.readLine();
-                System.out.println("Message");
+                System.out.println("Message received from client = " + msgFromClient);
 
+                // Send response to the client
+                if (msgFromClient != null && !msgFromClient.equalsIgnoreCase("bye") {
+                    OutputStream clientOut = client.getOutputstream();
+                    PrintWriter pw = new PrintWriter(clientOut, true);
+                    String ansMsg = "Hello, " +  msgFromClient;
+                    pw.println(ansMsg);
+                }
+
+                // Close Socket
+                if (msgFromClient != null && msgFromClient.equalsIgnoreCase("bye")) {
+                    server.close();
+                    client.close();
+                    break;
+                } catch(IOException ie) {
+                    // skriv ett lämpligt error meddelande
+                }
             }
         }
     }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28a7b442-f92e-409b-8c8f-908292e05789" name="Changes" comment="Skapad server repository">
+    <list default="true" id="28a7b442-f92e-409b-8c8f-908292e05789" name="Changes" comment="Skapar server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -15,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
@@ -47,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715688118527</updated>
-      <workItem from="1715688119518" duration="1703000" />
+      <workItem from="1715688119518" duration="2760000" />
     </task>
     <task id="LOCAL-00001" summary="Skapad server repository">
       <option name="closed" value="true" />
@@ -57,7 +60,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715688174963</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Skapar server">
+      <option name="closed" value="true" />
+      <created>1715689849201</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715689849201</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,14 +76,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Skapad server repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skapad server repository" />
+    <MESSAGE value="Skapar server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skapar server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>47</line>
+          <line>60</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
