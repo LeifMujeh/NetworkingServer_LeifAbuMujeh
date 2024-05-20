@@ -1,23 +1,23 @@
 import java.io.*;
-import java.net.ServerSocket;
+import java.net.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ServerSocket server = null;
         Socket client;
 
         // Defult port number we are giung to use
-        int portNumber  = 4500;
+        int portNumber = 4500;
         if (args.length >= 1) {
             portNumber = Integer.parseInt(args[0]);
         }
         // Create Server Side Socket
         try {
-         Server = new ServerSocket(portNumber);
-        } catch (IOException ie){
-            System.out.println(!"Cannot Open Socket." + ie);
+            server = new ServerSocket(portNumber);
+        } catch (IOException ie) {
+            System.out.println("Cannot Open Socket." + ie);
             System.exit(1);
         }
         System.out.println("ServerSocket is Created " + server);
@@ -30,9 +30,9 @@ public class Main {
                 client = server.accept();
 
                 System.out.println("Connect request is accepted...");
-                String clientHost = client.getInetAddress().get hostadress();
-                int clientPort =  client.getPort();
-                System.out.println("Client Host = " + clientHost + "Client Port = "  + clientPort);
+                String clientHost = client.getInetAddress().getHostAddress();
+                int clientPort = client.getPort();
+                System.out.println("Client Host = " + clientHost + "Client Port = " + clientPort);
 
                 // Read data  from Client
                 InputStream clientIn = client.getInputStream();
@@ -41,10 +41,10 @@ public class Main {
                 System.out.println("Message received from client = " + msgFromClient);
 
                 // Send response to the client
-                if (msgFromClient != null && !msgFromClient.equalsIgnoreCase("bye") {
-                    OutputStream clientOut = client.getOutputstream();
+                if (msgFromClient != null && !msgFromClient.equalsIgnoreCase("bye")) {
+                    OutputStream clientOut = client.getOutputStream();
                     PrintWriter pw = new PrintWriter(clientOut, true);
-                    String ansMsg = "Hello, " +  msgFromClient;
+                    String ansMsg = "Hello, " + msgFromClient;
                     pw.println(ansMsg);
                 }
 
@@ -53,9 +53,10 @@ public class Main {
                     server.close();
                     client.close();
                     break;
-                } catch(IOException ie) {
-                    // skriv ett lämpligt error meddelande
                 }
+            } catch (IOException ie) {
+                // skriv ett lämpligt error meddelande
+                System.out.println("Error creating server side socket");
             }
         }
     }
